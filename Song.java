@@ -1,18 +1,11 @@
 package PlaylistProject;
 /**
  * File for a Song class to be used in the Playlist Project
- * @Zara Khan
- * @1/28/25
+ * @author
+ * @version
  */
 public class Song {
     //Fields-- what information do we want each Song to store?
-
-    private String title; 
-    private String artist; 
-    private int duration;  
-    private boolean isLiked; 
-
-    
 
 
 
