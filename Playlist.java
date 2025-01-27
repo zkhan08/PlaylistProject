@@ -42,7 +42,9 @@ public class Playlist {
         songs.add(a);
     }
 
-    public 
+    public void RemoveSong(Song a){
+        songs.remove(a);
+    }
 
 
 
