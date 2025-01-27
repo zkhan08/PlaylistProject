@@ -46,6 +46,22 @@ public class Playlist {
         songs.remove(a);
     }
 
+    public ArrayList<Song> getSongs() {
+        return songs;
+    }
+
+    public void likeSong(int index) {
+        if (index >= 0 && index < songs.size()) {
+            songs.get(index).setLiked(true);
+        }
+    }
+
+
+
+
+
+
+
 
 
 }
