@@ -56,9 +56,9 @@ public class Playlist {
         }
     }
 
-
-
-
+    public void examineAllSongs() {
+        System.out.println(songs);
+    }
 
 
 
