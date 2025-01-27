@@ -60,6 +60,15 @@ public class Playlist {
         System.out.println(songs);
     }
 
+    public void examineLikedSongs() {
+        ArrayList<Song> likedSongs = new ArrayList<>();
+        for (Song song : songs) {
+            if (song.isLiked()) {
+                likedSongs.add(song);
+            }
+        }
+        System.out.println(likedSongs);
+    }
 
 
 
