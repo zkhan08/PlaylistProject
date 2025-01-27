@@ -11,13 +11,18 @@ public class Playlist {
      * (CarDealership, Zoo) for structure on how this will look
      */
 
-
-
+     private ArrayList<Song> songs;
 
      /**
       * Constructor-- this doesn't need any parameters. You should just initialize the ArrayList and
       * then use additional methods to add Songs in one-by-one
       */
+
+      public Playlist(){
+        songs = new ArrayList<Song>();
+      }
+
+
 
 
       
@@ -32,4 +37,5 @@ public class Playlist {
        * Determining the total duration of all songs
        * Removing all unliked songs from the playlist (careful with this one!)
        */
+      
 }
