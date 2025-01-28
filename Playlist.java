@@ -72,6 +72,8 @@ public class Playlist {
         System.out.println(likedSongs);
     }
 
+
+
     public int getTotalDuration() {
         int totalDuration = 0;
         for (Song song : songs) {
