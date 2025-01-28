@@ -21,6 +21,14 @@ public class Song {
      * How will you handle 'liked' songs? It makes sense for a Song not be 'liked' by default
      */
 
+     public Song(String titleInput, String artistInput, int durationInput) {
+
+        title = titleInput;
+        artist = artistInput;
+        duration = durationInput;
+        isLiked = false; //not liked
+    }
+
 
 
 
