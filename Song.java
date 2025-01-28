@@ -59,7 +59,18 @@ public class Song {
     public boolean isLiked() {
         return isLiked;
     }
+
+
+
+
+    /**
+     * Setter method
+     */
+    public void toggleLiked() {
+        isLiked = !isLiked;
+    }
 }
+
 
 
 
