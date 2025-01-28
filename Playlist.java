@@ -57,9 +57,11 @@ public class Playlist {
     }
 
     public void examineAllSongs() {
-        System.out.println(songs);
+        for (Song song : songs) {
+            System.out.println(song.toString());
+        }
     }
-
+    
     public void examineLikedSongs() {
         ArrayList<Song> likedSongs = new ArrayList<>();
         for (Song song : songs) {
