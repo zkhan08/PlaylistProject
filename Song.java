@@ -7,6 +7,10 @@ package PlaylistProject;
 public class Song {
     //Fields-- what information do we want each Song to store?
 
+    private String title; 
+    private String artist;
+    private int duration; 
+    private boolean isLiked; 
     
 
 
