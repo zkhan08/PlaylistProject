@@ -37,19 +37,19 @@ public class Playlist {
        * Determining the total duration of all songs
        * Removing all unliked songs from the playlist (careful with this one!)
        */
-
+// add song
     public void AddSong(Song a){
         songs.add(a);
     }
-
+// remove song
     public void RemoveSong(Song a){
         songs.remove(a);
     }
-
+// get song
     public ArrayList<Song> getSongs() {
         return songs;
     }
-
+// like song
     public void likeSong(int index) {
         if (index >= 0 && index < songs.size()) {
             songs.get(index).setLiked(true);
@@ -61,7 +61,7 @@ public class Playlist {
             System.out.println(song.toString());
         }
     }
-    
+
     public void examineLikedSongs() {
         ArrayList<Song> likedSongs = new ArrayList<>();
         for (Song song : songs) {
@@ -71,7 +71,6 @@ public class Playlist {
         }
         System.out.println(likedSongs);
     }
-
 
 
     public int getTotalDuration() {
