@@ -78,6 +78,16 @@ public class Playlist {
         return totalDuration;
     }
 
+    public void removeUnlikedSongs() {
+        ArrayList<Song> likedSongs = new ArrayList<>();
+        for (Song song : songs) {
+            if (song.isLiked()) {
+                likedSongs.add(song);
+            }
+        }
+        songs = likedSongs;
+    }
+
 
 
 
