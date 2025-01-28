@@ -31,8 +31,6 @@ public class Song {
 
 
 
-
-
      /**
       * Methods-- what will you want each Song to do?
       * Consider all the getter methods (getName, getArtist, etc.)
@@ -42,4 +40,26 @@ public class Song {
       */
 
 
+   
+    public String getTitle() {
+        return title;
+    }
+
+
+    public String getArtist() {
+        return artist;
+    }
+
+
+    public int getDuration() {
+        return duration;
+    }
+
+   
+    public boolean isLiked() {
+        return isLiked;
+    }
 }
+
+
+
