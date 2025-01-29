@@ -69,6 +69,16 @@ public class Song {
     public void toggleLiked() {
         isLiked = !isLiked;
     }
+
+ /**
+     * Converts info to string
+     */
+    public String toString() {
+        int minutes = duration / 60;
+        int seconds = duration % 60;
+        return "Title: " + title + ", Artist: " + artist + ", Duration: " + 
+               minutes + ":" + (seconds < 10 ? "0" + seconds : seconds) + ", Liked: " + (isLiked ? "Yes" : "No");
+    }
 }
 
 
