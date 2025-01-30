@@ -7,6 +7,10 @@ package PlaylistProject;
 public class Song {
     //Fields-- what information do we want each Song to store?
 
+    private String title; 
+    private String artist;
+    private int duration; 
+    private boolean isLiked; 
     
 
 
@@ -17,7 +21,13 @@ public class Song {
      * How will you handle 'liked' songs? It makes sense for a Song not be 'liked' by default
      */
 
+     public Song(String titleInput, String artistInput, int durationInput) {
 
+        title = titleInput;
+        artist = artistInput;
+        duration = durationInput;
+        isLiked = false; //not liked
+    }
 
 
 
@@ -30,4 +40,47 @@ public class Song {
       */
 
 
+   
+    public String getTitle() {
+        return title;
+    }
+
+
+    public String getArtist() {
+        return artist;
+    }
+
+
+    public int getDuration() {
+        return duration;
+    }
+
+   
+    public boolean isLiked() {
+        return isLiked;
+    }
+
+
+
+
+    /**
+     * Setter method
+     */
+    public void toggleLiked() {
+        isLiked = !isLiked;
+    }
+
+ /**
+     * Converts info to string
+     */
+    public String toString() {
+        int minutes = duration / 60;
+        int seconds = duration % 60;
+        return "Title: " + title + ", Artist: " + artist + ", Duration: " + 
+               minutes + ":" + (seconds < 10 ? "0" + seconds : seconds) + ", Liked: " + (isLiked ? "Yes" : "No");
+    }
 }
+
+
+
+
