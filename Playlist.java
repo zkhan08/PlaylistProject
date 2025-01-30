@@ -19,6 +19,8 @@ public class Playlist {
       */
 
       public Playlist(){
+
+        String likedSongs = "";
         songs = new ArrayList<Song>();
       }
 
