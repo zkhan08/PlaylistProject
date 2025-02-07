@@ -1,6 +1,6 @@
 /**
  * File for a Song class to be used in the Playlist Project
- * @author Langston Standridge
+ * @author Langston Standridge (with the help of Jamie Hsieh because I was sick and couldn't come to school for help)
  * @version 02/06/25
  */
 public class Song {
