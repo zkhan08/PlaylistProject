@@ -1,97 +1,78 @@
-package PlaylistProject;
 import java.util.ArrayList;
 
-/**
- * The Playlist class, which will keep track of a playlist of Song objects
- * Refer to the project description to make sure you have access to all available methods
- */
 public class Playlist {
-    /**
-     * Fields-- This will likely just need to be the ArrayList of Songs. Reference our previous problems
-     * (CarDealership, Zoo) for structure on how this will look
-     */
+    private ArrayList<Song> playlist;
 
-     private ArrayList<Song> songs;
-
-     /**
-      * Constructor-- this doesn't need any parameters. You should just initialize the ArrayList and
-      * then use additional methods to add Songs in one-by-one
-      */
-
-      public Playlist(){
-        songs = new ArrayList<Song>();
-      }
-
-
-
-
-      
-
-      /**
-       * Methods-- Remember that you need to be able to complete all of the following:
-       * Adding a song
-       * 'liking' a song
-       * Removing a specific song
-       * Examining all Songs (a String return or void print makes sense here)
-       * Examining a sublist of all liked songs
-       * Determining the total duration of all songs
-       * Removing all unliked songs from the playlist (careful with this one!)
-       */
-// add song
-    public void AddSong(Song a){
-        songs.add(a);
+    public Playlist() {
+        playlist = new ArrayList<Song>();
     }
-// remove song
-    public void RemoveSong(Song a){
-        songs.remove(a);
+
+    // Add a song to the playlist
+    public void addToPlaylist(Song asong) {
+        playlist.add(asong);
+        System.out.println("Added " + playlist.get(playlist.size() - 1).toString());
     }
-// get song
-    public ArrayList<Song> getSongs() {
-        return songs;
-    }
-// like song
-    public void likeSong(int index) {
-        if (index >= 0 && index < songs.size()) {
-            songs.get(index).setLiked(true);
+
+    // Print out all the songs in the playlist
+    public void printSongs() {
+        for (int i = 0; i < playlist.size(); i++) {
+            System.out.println(playlist.get(i).toString());
         }
     }
 
-    public void examineAllSongs() {
-        for (Song song : songs) {
-            System.out.println(song.toString());
+    // Like a song at a specific position (1-based index)
+    public void likeSong(int x) {
+        if (x >= 1 && x <= playlist.size()) {
+            playlist.get(x - 1).like();
         }
     }
 
-    public void examineLikedSongs() {
-        ArrayList<Song> likedSongs = new ArrayList<>();
-        for (Song song : songs) {
-            if (song.isLiked()) {
-                likedSongs.add(song);
+    // Remove a song at a specific position (1-based index)
+    public void removeSong(int x) {
+        if (x >= 1 && x <= playlist.size()) {
+            playlist.remove(x - 1);
+        }
+    }
+
+    // Print out only the liked songs
+    public void likedOnly() {
+        for (int i = 0; i < playlist.size(); i++) {
+            if (playlist.get(i).isLiked()) {
+                System.out.println(playlist.get(i).toString());
             }
         }
-        System.out.println(likedSongs);
     }
 
+    // Calculate the total duration of all songs in minutes:seconds format
+    public void calculateDuration() {
+        int totalSec = 0;
+        int finalSec = 0;
+        int finalMin = 0;
+        String finalSeconds = "";
 
-    public int getTotalDuration() {
-        int totalDuration = 0;
-        for (Song song : songs) {
-            totalDuration += song.getDuration();
+        for (int i = 0; i < playlist.size(); i++) {
+            totalSec += playlist.get(i).getTimeInSeconds();
         }
-        return totalDuration;
+
+        finalMin = totalSec / 60;
+        finalSec = totalSec % 60;
+
+        if (finalSec < 10) {
+            finalSeconds = "0" + Integer.toString(finalSec);
+        } else {
+            finalSeconds = Integer.toString(finalSec);
+        }
+
+        System.out.println(finalMin + ":" + finalSeconds);
     }
 
-    public void removeUnlikedSongs() {
-        ArrayList<Song> likedSongs = new ArrayList<>();
-        for (Song song : songs) {
-            if (song.isLiked()) {
-                likedSongs.add(song);
+    // Remove all unliked songs from the playlist
+    public void removeUnliked() {
+        for (int i = 0; i < playlist.size(); i++) {
+            if (!playlist.get(i).isLiked()) {
+                playlist.remove(i);
+                i--;  // Adjust index after removal
             }
         }
-        songs = likedSongs;
     }
-
-
-
-
 }
