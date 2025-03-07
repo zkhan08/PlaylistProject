@@ -5,7 +5,22 @@ package PlaylistProject;
  * @version
  */
 public class Song {
+
+    public void setLiked(boolean b) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'setLiked'");
+    }
     //Fields-- what information do we want each Song to store?
+
+    public boolean isLiked() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'isLiked'");
+    }
+
+    public int getDuration() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getDuration'");
+    }
 
     
 
